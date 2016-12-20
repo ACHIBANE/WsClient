@@ -4,7 +4,7 @@
  * This file was auto-generated from WSDL
  * by the Apache Axis2 version: 1.7.4  Built on : Oct 21, 2016 (10:47:34 BST)
  */
-package generated;
+package wmd;
 
 
 /**
@@ -39,17 +39,16 @@ public abstract class Client_managerCallbackHandler {
     }
 
     /**
-     * auto generated Axis2 call back method for checkUser method
-     * override this method for handling normal response from checkUser operation
+     * auto generated Axis2 call back method for hello method
+     * override this method for handling normal response from hello operation
      */
-    public void receiveResultcheckUser(
-        generated.Client_managerStub.CheckUserResponse result) {
+    public void receiveResulthello(wmd.Client_managerStub.HelloResponse result) {
     }
 
     /**
      * auto generated Axis2 Error handler
-     * override this method for handling error response from checkUser operation
+     * override this method for handling error response from hello operation
      */
-    public void receiveErrorcheckUser(java.lang.Exception e) {
+    public void receiveErrorhello(java.lang.Exception e) {
     }
 }

@@ -4,7 +4,7 @@
  * This file was auto-generated from WSDL
  * by the Apache Axis2 version: 1.7.4  Built on : Oct 21, 2016 (10:47:34 BST)
  */
-package generated;
+package wmd;
 
 
 /*
@@ -105,7 +105,7 @@ public class Client_managerStub extends org.apache.axis2.client.Stub {
         __operation = new org.apache.axis2.description.OutInAxisOperation();
 
         __operation.setName(new javax.xml.namespace.QName("http://ws.wmd",
-                "checkUser"));
+                "hello"));
         _service.addOperation(__operation);
 
         _operations[0] = __operation;
@@ -118,17 +118,16 @@ public class Client_managerStub extends org.apache.axis2.client.Stub {
     /**
      * Auto generated method signature
      *
-     * @see generated2.Client_manager#checkUser
-     * @param checkUser0
+     * @see wmd.Client_manager#hello
+     * @param hello0
      */
-    public generated.Client_managerStub.CheckUserResponse checkUser(
-        generated.Client_managerStub.CheckUser checkUser0)
-        throws java.rmi.RemoteException {
+    public wmd.Client_managerStub.HelloResponse hello(
+        wmd.Client_managerStub.Hello hello0) throws java.rmi.RemoteException {
         org.apache.axis2.context.MessageContext _messageContext = null;
 
         try {
             org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[0].getName());
-            _operationClient.getOptions().setAction("urn:CheckUser");
+            _operationClient.getOptions().setAction("urn:Hello");
             _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
 
             addPropertyToOperationClient(_operationClient,
@@ -143,11 +142,10 @@ public class Client_managerStub extends org.apache.axis2.client.Stub {
 
             env = toEnvelope(getFactory(_operationClient.getOptions()
                                                         .getSoapVersionURI()),
-                    checkUser0,
+                    hello0,
                     optimizeContent(
-                        new javax.xml.namespace.QName("http://ws.wmd",
-                            "checkUser")),
-                    new javax.xml.namespace.QName("http://ws.wmd", "CheckUser"));
+                        new javax.xml.namespace.QName("http://ws.wmd", "hello")),
+                    new javax.xml.namespace.QName("http://ws.wmd", "Hello"));
 
             //adding SOAP soap_headers
             _serviceClient.addHeadersToEnvelope(env);
@@ -165,27 +163,27 @@ public class Client_managerStub extends org.apache.axis2.client.Stub {
 
             java.lang.Object object = fromOM(_returnEnv.getBody()
                                                        .getFirstElement(),
-                    generated.Client_managerStub.CheckUserResponse.class);
+                    wmd.Client_managerStub.HelloResponse.class);
 
-            return (generated.Client_managerStub.CheckUserResponse) object;
+            return (wmd.Client_managerStub.HelloResponse) object;
         } catch (org.apache.axis2.AxisFault f) {
             org.apache.axiom.om.OMElement faultElt = f.getDetail();
 
             if (faultElt != null) {
                 if (faultExceptionNameMap.containsKey(
                             new org.apache.axis2.client.FaultMapKey(
-                                faultElt.getQName(), "CheckUser"))) {
+                                faultElt.getQName(), "Hello"))) {
                     //make the fault by reflection
                     try {
                         java.lang.String exceptionClassName = (java.lang.String) faultExceptionClassNameMap.get(new org.apache.axis2.client.FaultMapKey(
-                                    faultElt.getQName(), "CheckUser"));
+                                    faultElt.getQName(), "Hello"));
                         java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
                         java.lang.reflect.Constructor constructor = exceptionClass.getConstructor(java.lang.String.class);
                         java.lang.Exception ex = (java.lang.Exception) constructor.newInstance(f.getMessage());
 
                         //message class
                         java.lang.String messageClassName = (java.lang.String) faultMessageMap.get(new org.apache.axis2.client.FaultMapKey(
-                                    faultElt.getQName(), "CheckUser"));
+                                    faultElt.getQName(), "Hello"));
                         java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
                         java.lang.Object messageObject = fromOM(faultElt,
                                 messageClass);
@@ -230,15 +228,14 @@ public class Client_managerStub extends org.apache.axis2.client.Stub {
     /**
      * Auto generated method signature for Asynchronous Invocations
      *
-     * @see generated2.Client_manager#startcheckUser
-     * @param checkUser0
+     * @see wmd.Client_manager#starthello
+     * @param hello0
      */
-    public void startcheckUser(
-        generated.Client_managerStub.CheckUser checkUser0,
-        final generated.Client_managerCallbackHandler callback)
+    public void starthello(wmd.Client_managerStub.Hello hello0,
+        final wmd.Client_managerCallbackHandler callback)
         throws java.rmi.RemoteException {
         org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[0].getName());
-        _operationClient.getOptions().setAction("urn:CheckUser");
+        _operationClient.getOptions().setAction("urn:Hello");
         _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
 
         addPropertyToOperationClient(_operationClient,
@@ -252,10 +249,10 @@ public class Client_managerStub extends org.apache.axis2.client.Stub {
         //Style is Doc.
         env = toEnvelope(getFactory(_operationClient.getOptions()
                                                     .getSoapVersionURI()),
-                checkUser0,
+                hello0,
                 optimizeContent(
-                    new javax.xml.namespace.QName("http://ws.wmd", "checkUser")),
-                new javax.xml.namespace.QName("http://ws.wmd", "CheckUser"));
+                    new javax.xml.namespace.QName("http://ws.wmd", "hello")),
+                new javax.xml.namespace.QName("http://ws.wmd", "Hello"));
 
         // adding SOAP soap_headers
         _serviceClient.addHeadersToEnvelope(env);
@@ -273,10 +270,10 @@ public class Client_managerStub extends org.apache.axis2.client.Stub {
 
                         java.lang.Object object = fromOM(resultEnv.getBody()
                                                                   .getFirstElement(),
-                                generated.Client_managerStub.CheckUserResponse.class);
-                        callback.receiveResultcheckUser((generated.Client_managerStub.CheckUserResponse) object);
+                                wmd.Client_managerStub.HelloResponse.class);
+                        callback.receiveResulthello((wmd.Client_managerStub.HelloResponse) object);
                     } catch (org.apache.axis2.AxisFault e) {
-                        callback.receiveErrorcheckUser(e);
+                        callback.receiveErrorhello(e);
                     }
                 }
 
@@ -288,18 +285,18 @@ public class Client_managerStub extends org.apache.axis2.client.Stub {
                         if (faultElt != null) {
                             if (faultExceptionNameMap.containsKey(
                                         new org.apache.axis2.client.FaultMapKey(
-                                            faultElt.getQName(), "CheckUser"))) {
+                                            faultElt.getQName(), "Hello"))) {
                                 //make the fault by reflection
                                 try {
                                     java.lang.String exceptionClassName = (java.lang.String) faultExceptionClassNameMap.get(new org.apache.axis2.client.FaultMapKey(
-                                                faultElt.getQName(), "CheckUser"));
+                                                faultElt.getQName(), "Hello"));
                                     java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
                                     java.lang.reflect.Constructor constructor = exceptionClass.getConstructor(java.lang.String.class);
                                     java.lang.Exception ex = (java.lang.Exception) constructor.newInstance(f.getMessage());
 
                                     //message class
                                     java.lang.String messageClassName = (java.lang.String) faultMessageMap.get(new org.apache.axis2.client.FaultMapKey(
-                                                faultElt.getQName(), "CheckUser"));
+                                                faultElt.getQName(), "Hello"));
                                     java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
                                     java.lang.Object messageObject = fromOM(faultElt,
                                             messageClass);
@@ -308,38 +305,38 @@ public class Client_managerStub extends org.apache.axis2.client.Stub {
                                     m.invoke(ex,
                                         new java.lang.Object[] { messageObject });
 
-                                    callback.receiveErrorcheckUser(new java.rmi.RemoteException(
+                                    callback.receiveErrorhello(new java.rmi.RemoteException(
                                             ex.getMessage(), ex));
                                 } catch (java.lang.ClassCastException e) {
                                     // we cannot intantiate the class - throw the original Axis fault
-                                    callback.receiveErrorcheckUser(f);
+                                    callback.receiveErrorhello(f);
                                 } catch (java.lang.ClassNotFoundException e) {
                                     // we cannot intantiate the class - throw the original Axis fault
-                                    callback.receiveErrorcheckUser(f);
+                                    callback.receiveErrorhello(f);
                                 } catch (java.lang.NoSuchMethodException e) {
                                     // we cannot intantiate the class - throw the original Axis fault
-                                    callback.receiveErrorcheckUser(f);
+                                    callback.receiveErrorhello(f);
                                 } catch (java.lang.reflect.InvocationTargetException e) {
                                     // we cannot intantiate the class - throw the original Axis fault
-                                    callback.receiveErrorcheckUser(f);
+                                    callback.receiveErrorhello(f);
                                 } catch (java.lang.IllegalAccessException e) {
                                     // we cannot intantiate the class - throw the original Axis fault
-                                    callback.receiveErrorcheckUser(f);
+                                    callback.receiveErrorhello(f);
                                 } catch (java.lang.InstantiationException e) {
                                     // we cannot intantiate the class - throw the original Axis fault
-                                    callback.receiveErrorcheckUser(f);
+                                    callback.receiveErrorhello(f);
                                 } catch (org.apache.axis2.AxisFault e) {
                                     // we cannot intantiate the class - throw the original Axis fault
-                                    callback.receiveErrorcheckUser(f);
+                                    callback.receiveErrorhello(f);
                                 }
                             } else {
-                                callback.receiveErrorcheckUser(f);
+                                callback.receiveErrorhello(f);
                             }
                         } else {
-                            callback.receiveErrorcheckUser(f);
+                            callback.receiveErrorhello(f);
                         }
                     } else {
-                        callback.receiveErrorcheckUser(error);
+                        callback.receiveErrorhello(error);
                     }
                 }
 
@@ -354,7 +351,7 @@ public class Client_managerStub extends org.apache.axis2.client.Stub {
                         _messageContext.getTransportOut().getSender()
                                        .cleanup(_messageContext);
                     } catch (org.apache.axis2.AxisFault axisFault) {
-                        callback.receiveErrorcheckUser(axisFault);
+                        callback.receiveErrorhello(axisFault);
                     }
                 }
             });
@@ -386,10 +383,10 @@ public class Client_managerStub extends org.apache.axis2.client.Stub {
     }
 
     private org.apache.axiom.om.OMElement toOM(
-        generated.Client_managerStub.CheckUser param, boolean optimizeContent)
+        wmd.Client_managerStub.Hello param, boolean optimizeContent)
         throws org.apache.axis2.AxisFault {
         try {
-            return param.getOMElement(generated.Client_managerStub.CheckUser.MY_QNAME,
+            return param.getOMElement(wmd.Client_managerStub.Hello.MY_QNAME,
                 org.apache.axiom.om.OMAbstractFactory.getOMFactory());
         } catch (org.apache.axis2.databinding.ADBException e) {
             throw org.apache.axis2.AxisFault.makeFault(e);
@@ -397,10 +394,10 @@ public class Client_managerStub extends org.apache.axis2.client.Stub {
     }
 
     private org.apache.axiom.om.OMElement toOM(
-        generated.Client_managerStub.CheckUserResponse param,
-        boolean optimizeContent) throws org.apache.axis2.AxisFault {
+        wmd.Client_managerStub.HelloResponse param, boolean optimizeContent)
+        throws org.apache.axis2.AxisFault {
         try {
-            return param.getOMElement(generated.Client_managerStub.CheckUserResponse.MY_QNAME,
+            return param.getOMElement(wmd.Client_managerStub.HelloResponse.MY_QNAME,
                 org.apache.axiom.om.OMAbstractFactory.getOMFactory());
         } catch (org.apache.axis2.databinding.ADBException e) {
             throw org.apache.axis2.AxisFault.makeFault(e);
@@ -409,14 +406,14 @@ public class Client_managerStub extends org.apache.axis2.client.Stub {
 
     private org.apache.axiom.soap.SOAPEnvelope toEnvelope(
         org.apache.axiom.soap.SOAPFactory factory,
-        generated.Client_managerStub.CheckUser param, boolean optimizeContent,
+        wmd.Client_managerStub.Hello param, boolean optimizeContent,
         javax.xml.namespace.QName elementQName)
         throws org.apache.axis2.AxisFault {
         try {
             org.apache.axiom.soap.SOAPEnvelope emptyEnvelope = factory.getDefaultEnvelope();
             emptyEnvelope.getBody()
                          .addChild(param.getOMElement(
-                    generated.Client_managerStub.CheckUser.MY_QNAME, factory));
+                    wmd.Client_managerStub.Hello.MY_QNAME, factory));
 
             return emptyEnvelope;
         } catch (org.apache.axis2.databinding.ADBException e) {
@@ -437,13 +434,12 @@ public class Client_managerStub extends org.apache.axis2.client.Stub {
     private java.lang.Object fromOM(org.apache.axiom.om.OMElement param,
         java.lang.Class type) throws org.apache.axis2.AxisFault {
         try {
-            if (generated.Client_managerStub.CheckUser.class.equals(type)) {
-                return generated.Client_managerStub.CheckUser.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+            if (wmd.Client_managerStub.Hello.class.equals(type)) {
+                return wmd.Client_managerStub.Hello.Factory.parse(param.getXMLStreamReaderWithoutCaching());
             }
 
-            if (generated.Client_managerStub.CheckUserResponse.class.equals(
-                        type)) {
-                return generated.Client_managerStub.CheckUserResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+            if (wmd.Client_managerStub.HelloResponse.class.equals(type)) {
+                return wmd.Client_managerStub.HelloResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
             }
         } catch (java.lang.Exception e) {
             throw org.apache.axis2.AxisFault.makeFault(e);
@@ -453,110 +449,50 @@ public class Client_managerStub extends org.apache.axis2.client.Stub {
     }
 
     //http://localhost:8080/axis2/services/client_manager.client_managerHttpSoap12Endpoint/
-    public static class User implements org.apache.axis2.databinding.ADBBean {
-        /* This type was generated from the piece of schema that had
-           name = User
-           Namespace URI = http://entities.ws.wmd/xsd
-           Namespace Prefix = ns1
-         */
+    public static class ExtensionMapper {
+        public static java.lang.Object getTypeObject(
+            java.lang.String namespaceURI, java.lang.String typeName,
+            javax.xml.stream.XMLStreamReader reader) throws java.lang.Exception {
+            throw new org.apache.axis2.databinding.ADBException(
+                "Unsupported type " + namespaceURI + " " + typeName);
+        }
+    }
+
+    public static class HelloResponse implements org.apache.axis2.databinding.ADBBean {
+        public static final javax.xml.namespace.QName MY_QNAME = new javax.xml.namespace.QName("http://ws.wmd",
+                "HelloResponse", "ns1");
 
         /**
-         * field for Id
+         * field for _return
          */
-        protected long localId;
+        protected java.lang.String local_return;
 
         /*  This tracker boolean wil be used to detect whether the user called the set method
          *   for this attribute. It will be used to determine whether to include this field
          *   in the serialized XML
          */
-        protected boolean localIdTracker = false;
+        protected boolean local_returnTracker = false;
 
-        /**
-         * field for Login
-         */
-        protected java.lang.String localLogin;
-
-        /*  This tracker boolean wil be used to detect whether the user called the set method
-         *   for this attribute. It will be used to determine whether to include this field
-         *   in the serialized XML
-         */
-        protected boolean localLoginTracker = false;
-
-        /**
-         * field for Password
-         */
-        protected java.lang.String localPassword;
-
-        /*  This tracker boolean wil be used to detect whether the user called the set method
-         *   for this attribute. It will be used to determine whether to include this field
-         *   in the serialized XML
-         */
-        protected boolean localPasswordTracker = false;
-
-        public boolean isIdSpecified() {
-            return localIdTracker;
-        }
-
-        /**
-         * Auto generated getter method
-         * @return long
-         */
-        public long getId() {
-            return localId;
-        }
-
-        /**
-         * Auto generated setter method
-         * @param param Id
-         */
-        public void setId(long param) {
-            localIdTracker = true;
-
-            this.localId = param;
-        }
-
-        public boolean isLoginSpecified() {
-            return localLoginTracker;
+        public boolean is_returnSpecified() {
+            return local_returnTracker;
         }
 
         /**
          * Auto generated getter method
          * @return java.lang.String
          */
-        public java.lang.String getLogin() {
-            return localLogin;
+        public java.lang.String get_return() {
+            return local_return;
         }
 
         /**
          * Auto generated setter method
-         * @param param Login
+         * @param param _return
          */
-        public void setLogin(java.lang.String param) {
-            localLoginTracker = true;
+        public void set_return(java.lang.String param) {
+            local_returnTracker = true;
 
-            this.localLogin = param;
-        }
-
-        public boolean isPasswordSpecified() {
-            return localPasswordTracker;
-        }
-
-        /**
-         * Auto generated getter method
-         * @return java.lang.String
-         */
-        public java.lang.String getPassword() {
-            return localPassword;
-        }
-
-        /**
-         * Auto generated setter method
-         * @param param Password
-         */
-        public void setPassword(java.lang.String param) {
-            localPasswordTracker = true;
-
-            this.localPassword = param;
+            this.local_return = param;
         }
 
         /**
@@ -570,7 +506,7 @@ public class Client_managerStub extends org.apache.axis2.client.Stub {
             final org.apache.axiom.om.OMFactory factory)
             throws org.apache.axis2.databinding.ADBException {
             return factory.createOMElement(new org.apache.axis2.databinding.ADBDataSource(
-                    this, parentQName));
+                    this, MY_QNAME));
         }
 
         public void serialize(final javax.xml.namespace.QName parentQName,
@@ -594,63 +530,31 @@ public class Client_managerStub extends org.apache.axis2.client.Stub {
 
             if (serializeType) {
                 java.lang.String namespacePrefix = registerPrefix(xmlWriter,
-                        "http://entities.ws.wmd/xsd");
+                        "http://ws.wmd");
 
                 if ((namespacePrefix != null) &&
                         (namespacePrefix.trim().length() > 0)) {
                     writeAttribute("xsi",
                         "http://www.w3.org/2001/XMLSchema-instance", "type",
-                        namespacePrefix + ":User", xmlWriter);
+                        namespacePrefix + ":HelloResponse", xmlWriter);
                 } else {
                     writeAttribute("xsi",
                         "http://www.w3.org/2001/XMLSchema-instance", "type",
-                        "User", xmlWriter);
+                        "HelloResponse", xmlWriter);
                 }
             }
 
-            if (localIdTracker) {
-                namespace = "http://entities.ws.wmd/xsd";
-                writeStartElement(null, namespace, "id", xmlWriter);
+            if (local_returnTracker) {
+                namespace = "http://ws.wmd";
+                writeStartElement(null, namespace, "return", xmlWriter);
 
-                if (localId == java.lang.Long.MIN_VALUE) {
-                    writeAttribute("xsi",
-                        "http://www.w3.org/2001/XMLSchema-instance", "nil",
-                        "1", xmlWriter);
-                } else {
-                    xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(
-                            localId));
-                }
-
-                xmlWriter.writeEndElement();
-            }
-
-            if (localLoginTracker) {
-                namespace = "http://entities.ws.wmd/xsd";
-                writeStartElement(null, namespace, "login", xmlWriter);
-
-                if (localLogin == null) {
+                if (local_return == null) {
                     // write the nil attribute
                     writeAttribute("xsi",
                         "http://www.w3.org/2001/XMLSchema-instance", "nil",
                         "1", xmlWriter);
                 } else {
-                    xmlWriter.writeCharacters(localLogin);
-                }
-
-                xmlWriter.writeEndElement();
-            }
-
-            if (localPasswordTracker) {
-                namespace = "http://entities.ws.wmd/xsd";
-                writeStartElement(null, namespace, "password", xmlWriter);
-
-                if (localPassword == null) {
-                    // write the nil attribute
-                    writeAttribute("xsi",
-                        "http://www.w3.org/2001/XMLSchema-instance", "nil",
-                        "1", xmlWriter);
-                } else {
-                    xmlWriter.writeCharacters(localPassword);
+                    xmlWriter.writeCharacters(local_return);
                 }
 
                 xmlWriter.writeEndElement();
@@ -661,7 +565,7 @@ public class Client_managerStub extends org.apache.axis2.client.Stub {
 
         private static java.lang.String generatePrefix(
             java.lang.String namespace) {
-            if (namespace.equals("http://entities.ws.wmd/xsd")) {
+            if (namespace.equals("http://ws.wmd")) {
                 return "ns1";
             }
 
@@ -878,489 +782,10 @@ public class Client_managerStub extends org.apache.axis2.client.Stub {
              * Postcondition: If this object is an element, the reader is positioned at its end element
              *                If this object is a complex type, the reader is positioned at the end element of its outer element
              */
-            public static User parse(javax.xml.stream.XMLStreamReader reader)
-                throws java.lang.Exception {
-                User object = new User();
-
-                int event;
-                javax.xml.namespace.QName currentQName = null;
-                java.lang.String nillableValue = null;
-                java.lang.String prefix = "";
-                java.lang.String namespaceuri = "";
-
-                try {
-                    while (!reader.isStartElement() && !reader.isEndElement())
-                        reader.next();
-
-                    currentQName = reader.getName();
-
-                    if (reader.getAttributeValue(
-                                "http://www.w3.org/2001/XMLSchema-instance",
-                                "type") != null) {
-                        java.lang.String fullTypeName = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance",
-                                "type");
-
-                        if (fullTypeName != null) {
-                            java.lang.String nsPrefix = null;
-
-                            if (fullTypeName.indexOf(":") > -1) {
-                                nsPrefix = fullTypeName.substring(0,
-                                        fullTypeName.indexOf(":"));
-                            }
-
-                            nsPrefix = (nsPrefix == null) ? "" : nsPrefix;
-
-                            java.lang.String type = fullTypeName.substring(fullTypeName.indexOf(
-                                        ":") + 1);
-
-                            if (!"User".equals(type)) {
-                                //find namespace for the prefix
-                                java.lang.String nsUri = reader.getNamespaceContext()
-                                                               .getNamespaceURI(nsPrefix);
-
-                                return (User) ExtensionMapper.getTypeObject(nsUri,
-                                    type, reader);
-                            }
-                        }
-                    }
-
-                    // Note all attributes that were handled. Used to differ normal attributes
-                    // from anyAttributes.
-                    java.util.Vector handledAttributes = new java.util.Vector();
-
-                    reader.next();
-
-                    while (!reader.isStartElement() && !reader.isEndElement())
-                        reader.next();
-
-                    if ((reader.isStartElement() &&
-                            new javax.xml.namespace.QName(
-                                "http://entities.ws.wmd/xsd", "id").equals(
-                                reader.getName())) ||
-                            new javax.xml.namespace.QName("", "id").equals(
-                                reader.getName())) {
-                        nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance",
-                                "nil");
-
-                        if (!"true".equals(nillableValue) &&
-                                !"1".equals(nillableValue)) {
-                            java.lang.String content = reader.getElementText();
-
-                            object.setId(org.apache.axis2.databinding.utils.ConverterUtil.convertToLong(
-                                    content));
-                        } else {
-                            object.setId(java.lang.Long.MIN_VALUE);
-
-                            reader.getElementText(); // throw away text nodes if any.
-                        }
-
-                        reader.next();
-                    } // End of if for expected property start element
-
-                    else {
-                        object.setId(java.lang.Long.MIN_VALUE);
-                    }
-
-                    while (!reader.isStartElement() && !reader.isEndElement())
-                        reader.next();
-
-                    if ((reader.isStartElement() &&
-                            new javax.xml.namespace.QName(
-                                "http://entities.ws.wmd/xsd", "login").equals(
-                                reader.getName())) ||
-                            new javax.xml.namespace.QName("", "login").equals(
-                                reader.getName())) {
-                        nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance",
-                                "nil");
-
-                        if (!"true".equals(nillableValue) &&
-                                !"1".equals(nillableValue)) {
-                            java.lang.String content = reader.getElementText();
-
-                            object.setLogin(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(
-                                    content));
-                        } else {
-                            reader.getElementText(); // throw away text nodes if any.
-                        }
-
-                        reader.next();
-                    } // End of if for expected property start element
-
-                    else {
-                    }
-
-                    while (!reader.isStartElement() && !reader.isEndElement())
-                        reader.next();
-
-                    if ((reader.isStartElement() &&
-                            new javax.xml.namespace.QName(
-                                "http://entities.ws.wmd/xsd", "password").equals(
-                                reader.getName())) ||
-                            new javax.xml.namespace.QName("", "password").equals(
-                                reader.getName())) {
-                        nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance",
-                                "nil");
-
-                        if (!"true".equals(nillableValue) &&
-                                !"1".equals(nillableValue)) {
-                            java.lang.String content = reader.getElementText();
-
-                            object.setPassword(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(
-                                    content));
-                        } else {
-                            reader.getElementText(); // throw away text nodes if any.
-                        }
-
-                        reader.next();
-                    } // End of if for expected property start element
-
-                    else {
-                    }
-
-                    while (!reader.isStartElement() && !reader.isEndElement())
-                        reader.next();
-
-                    if (reader.isStartElement()) {
-                        // 2 - A start element we are not expecting indicates a trailing invalid property
-                        throw new org.apache.axis2.databinding.ADBException(
-                            "Unexpected subelement " + reader.getName());
-                    }
-                } catch (javax.xml.stream.XMLStreamException e) {
-                    throw new java.lang.Exception(e);
-                }
-
-                return object;
-            }
-        } //end of factory class
-    }
-
-    public static class CheckUserResponse implements org.apache.axis2.databinding.ADBBean {
-        public static final javax.xml.namespace.QName MY_QNAME = new javax.xml.namespace.QName("http://ws.wmd",
-                "CheckUserResponse", "ns2");
-
-        /**
-         * field for _return
-         */
-        protected User local_return;
-
-        /*  This tracker boolean wil be used to detect whether the user called the set method
-         *   for this attribute. It will be used to determine whether to include this field
-         *   in the serialized XML
-         */
-        protected boolean local_returnTracker = false;
-
-        public boolean is_returnSpecified() {
-            return local_returnTracker;
-        }
-
-        /**
-         * Auto generated getter method
-         * @return User
-         */
-        public User get_return() {
-            return local_return;
-        }
-
-        /**
-         * Auto generated setter method
-         * @param param _return
-         */
-        public void set_return(User param) {
-            local_returnTracker = true;
-
-            this.local_return = param;
-        }
-
-        /**
-         *
-         * @param parentQName
-         * @param factory
-         * @return org.apache.axiom.om.OMElement
-         */
-        public org.apache.axiom.om.OMElement getOMElement(
-            final javax.xml.namespace.QName parentQName,
-            final org.apache.axiom.om.OMFactory factory)
-            throws org.apache.axis2.databinding.ADBException {
-            return factory.createOMElement(new org.apache.axis2.databinding.ADBDataSource(
-                    this, MY_QNAME));
-        }
-
-        public void serialize(final javax.xml.namespace.QName parentQName,
-            javax.xml.stream.XMLStreamWriter xmlWriter)
-            throws javax.xml.stream.XMLStreamException,
-                org.apache.axis2.databinding.ADBException {
-            serialize(parentQName, xmlWriter, false);
-        }
-
-        public void serialize(final javax.xml.namespace.QName parentQName,
-            javax.xml.stream.XMLStreamWriter xmlWriter, boolean serializeType)
-            throws javax.xml.stream.XMLStreamException,
-                org.apache.axis2.databinding.ADBException {
-            java.lang.String prefix = null;
-            java.lang.String namespace = null;
-
-            prefix = parentQName.getPrefix();
-            namespace = parentQName.getNamespaceURI();
-            writeStartElement(prefix, namespace, parentQName.getLocalPart(),
-                xmlWriter);
-
-            if (serializeType) {
-                java.lang.String namespacePrefix = registerPrefix(xmlWriter,
-                        "http://ws.wmd");
-
-                if ((namespacePrefix != null) &&
-                        (namespacePrefix.trim().length() > 0)) {
-                    writeAttribute("xsi",
-                        "http://www.w3.org/2001/XMLSchema-instance", "type",
-                        namespacePrefix + ":CheckUserResponse", xmlWriter);
-                } else {
-                    writeAttribute("xsi",
-                        "http://www.w3.org/2001/XMLSchema-instance", "type",
-                        "CheckUserResponse", xmlWriter);
-                }
-            }
-
-            if (local_returnTracker) {
-                if (local_return == null) {
-                    writeStartElement(null, "http://ws.wmd", "return", xmlWriter);
-
-                    // write the nil attribute
-                    writeAttribute("xsi",
-                        "http://www.w3.org/2001/XMLSchema-instance", "nil",
-                        "1", xmlWriter);
-                    xmlWriter.writeEndElement();
-                } else {
-                    local_return.serialize(new javax.xml.namespace.QName(
-                            "http://ws.wmd", "return"), xmlWriter);
-                }
-            }
-
-            xmlWriter.writeEndElement();
-        }
-
-        private static java.lang.String generatePrefix(
-            java.lang.String namespace) {
-            if (namespace.equals("http://ws.wmd")) {
-                return "ns2";
-            }
-
-            return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
-        }
-
-        /**
-         * Utility method to write an element start tag.
-         */
-        private void writeStartElement(java.lang.String prefix,
-            java.lang.String namespace, java.lang.String localPart,
-            javax.xml.stream.XMLStreamWriter xmlWriter)
-            throws javax.xml.stream.XMLStreamException {
-            java.lang.String writerPrefix = xmlWriter.getPrefix(namespace);
-
-            if (writerPrefix != null) {
-                xmlWriter.writeStartElement(writerPrefix, localPart, namespace);
-            } else {
-                if (namespace.length() == 0) {
-                    prefix = "";
-                } else if (prefix == null) {
-                    prefix = generatePrefix(namespace);
-                }
-
-                xmlWriter.writeStartElement(prefix, localPart, namespace);
-                xmlWriter.writeNamespace(prefix, namespace);
-                xmlWriter.setPrefix(prefix, namespace);
-            }
-        }
-
-        /**
-         * Util method to write an attribute with the ns prefix
-         */
-        private void writeAttribute(java.lang.String prefix,
-            java.lang.String namespace, java.lang.String attName,
-            java.lang.String attValue,
-            javax.xml.stream.XMLStreamWriter xmlWriter)
-            throws javax.xml.stream.XMLStreamException {
-            java.lang.String writerPrefix = xmlWriter.getPrefix(namespace);
-
-            if (writerPrefix != null) {
-                xmlWriter.writeAttribute(writerPrefix, namespace, attName,
-                    attValue);
-            } else {
-                xmlWriter.writeNamespace(prefix, namespace);
-                xmlWriter.setPrefix(prefix, namespace);
-                xmlWriter.writeAttribute(prefix, namespace, attName, attValue);
-            }
-        }
-
-        /**
-         * Util method to write an attribute without the ns prefix
-         */
-        private void writeAttribute(java.lang.String namespace,
-            java.lang.String attName, java.lang.String attValue,
-            javax.xml.stream.XMLStreamWriter xmlWriter)
-            throws javax.xml.stream.XMLStreamException {
-            if (namespace.equals("")) {
-                xmlWriter.writeAttribute(attName, attValue);
-            } else {
-                xmlWriter.writeAttribute(registerPrefix(xmlWriter, namespace),
-                    namespace, attName, attValue);
-            }
-        }
-
-        /**
-         * Util method to write an attribute without the ns prefix
-         */
-        private void writeQNameAttribute(java.lang.String namespace,
-            java.lang.String attName, javax.xml.namespace.QName qname,
-            javax.xml.stream.XMLStreamWriter xmlWriter)
-            throws javax.xml.stream.XMLStreamException {
-            java.lang.String attributeNamespace = qname.getNamespaceURI();
-            java.lang.String attributePrefix = xmlWriter.getPrefix(attributeNamespace);
-
-            if (attributePrefix == null) {
-                attributePrefix = registerPrefix(xmlWriter, attributeNamespace);
-            }
-
-            java.lang.String attributeValue;
-
-            if (attributePrefix.trim().length() > 0) {
-                attributeValue = attributePrefix + ":" + qname.getLocalPart();
-            } else {
-                attributeValue = qname.getLocalPart();
-            }
-
-            if (namespace.equals("")) {
-                xmlWriter.writeAttribute(attName, attributeValue);
-            } else {
-                registerPrefix(xmlWriter, namespace);
-                xmlWriter.writeAttribute(attributePrefix, namespace, attName,
-                    attributeValue);
-            }
-        }
-
-        /**
-         *  method to handle Qnames
-         */
-        private void writeQName(javax.xml.namespace.QName qname,
-            javax.xml.stream.XMLStreamWriter xmlWriter)
-            throws javax.xml.stream.XMLStreamException {
-            java.lang.String namespaceURI = qname.getNamespaceURI();
-
-            if (namespaceURI != null) {
-                java.lang.String prefix = xmlWriter.getPrefix(namespaceURI);
-
-                if (prefix == null) {
-                    prefix = generatePrefix(namespaceURI);
-                    xmlWriter.writeNamespace(prefix, namespaceURI);
-                    xmlWriter.setPrefix(prefix, namespaceURI);
-                }
-
-                if (prefix.trim().length() > 0) {
-                    xmlWriter.writeCharacters(prefix + ":" +
-                        org.apache.axis2.databinding.utils.ConverterUtil.convertToString(
-                            qname));
-                } else {
-                    // i.e this is the default namespace
-                    xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(
-                            qname));
-                }
-            } else {
-                xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(
-                        qname));
-            }
-        }
-
-        private void writeQNames(javax.xml.namespace.QName[] qnames,
-            javax.xml.stream.XMLStreamWriter xmlWriter)
-            throws javax.xml.stream.XMLStreamException {
-            if (qnames != null) {
-                // we have to store this data until last moment since it is not possible to write any
-                // namespace data after writing the charactor data
-                java.lang.StringBuffer stringToWrite = new java.lang.StringBuffer();
-                java.lang.String namespaceURI = null;
-                java.lang.String prefix = null;
-
-                for (int i = 0; i < qnames.length; i++) {
-                    if (i > 0) {
-                        stringToWrite.append(" ");
-                    }
-
-                    namespaceURI = qnames[i].getNamespaceURI();
-
-                    if (namespaceURI != null) {
-                        prefix = xmlWriter.getPrefix(namespaceURI);
-
-                        if ((prefix == null) || (prefix.length() == 0)) {
-                            prefix = generatePrefix(namespaceURI);
-                            xmlWriter.writeNamespace(prefix, namespaceURI);
-                            xmlWriter.setPrefix(prefix, namespaceURI);
-                        }
-
-                        if (prefix.trim().length() > 0) {
-                            stringToWrite.append(prefix).append(":")
-                                         .append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(
-                                    qnames[i]));
-                        } else {
-                            stringToWrite.append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(
-                                    qnames[i]));
-                        }
-                    } else {
-                        stringToWrite.append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(
-                                qnames[i]));
-                    }
-                }
-
-                xmlWriter.writeCharacters(stringToWrite.toString());
-            }
-        }
-
-        /**
-         * Register a namespace prefix
-         */
-        private java.lang.String registerPrefix(
-            javax.xml.stream.XMLStreamWriter xmlWriter,
-            java.lang.String namespace)
-            throws javax.xml.stream.XMLStreamException {
-            java.lang.String prefix = xmlWriter.getPrefix(namespace);
-
-            if (prefix == null) {
-                prefix = generatePrefix(namespace);
-
-                javax.xml.namespace.NamespaceContext nsContext = xmlWriter.getNamespaceContext();
-
-                while (true) {
-                    java.lang.String uri = nsContext.getNamespaceURI(prefix);
-
-                    if ((uri == null) || (uri.length() == 0)) {
-                        break;
-                    }
-
-                    prefix = org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
-                }
-
-                xmlWriter.writeNamespace(prefix, namespace);
-                xmlWriter.setPrefix(prefix, namespace);
-            }
-
-            return prefix;
-        }
-
-        /**
-         *  Factory class that keeps the parse method
-         */
-        public static class Factory {
-            private static org.apache.commons.logging.Log log = org.apache.commons.logging.LogFactory.getLog(Factory.class);
-
-            /**
-             * static method to create the object
-             * Precondition:  If this object is an element, the current or next start element starts this object and any intervening reader events are ignorable
-             *                If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
-             * Postcondition: If this object is an element, the reader is positioned at its end element
-             *                If this object is a complex type, the reader is positioned at the end element of its outer element
-             */
-            public static CheckUserResponse parse(
+            public static HelloResponse parse(
                 javax.xml.stream.XMLStreamReader reader)
                 throws java.lang.Exception {
-                CheckUserResponse object = new CheckUserResponse();
+                HelloResponse object = new HelloResponse();
 
                 int event;
                 javax.xml.namespace.QName currentQName = null;
@@ -1393,12 +818,12 @@ public class Client_managerStub extends org.apache.axis2.client.Stub {
                             java.lang.String type = fullTypeName.substring(fullTypeName.indexOf(
                                         ":") + 1);
 
-                            if (!"CheckUserResponse".equals(type)) {
+                            if (!"HelloResponse".equals(type)) {
                                 //find namespace for the prefix
                                 java.lang.String nsUri = reader.getNamespaceContext()
                                                                .getNamespaceURI(nsPrefix);
 
-                                return (CheckUserResponse) ExtensionMapper.getTypeObject(nsUri,
+                                return (HelloResponse) ExtensionMapper.getTypeObject(nsUri,
                                     type, reader);
                             }
                         }
@@ -1421,17 +846,17 @@ public class Client_managerStub extends org.apache.axis2.client.Stub {
                         nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance",
                                 "nil");
 
-                        if ("true".equals(nillableValue) ||
-                                "1".equals(nillableValue)) {
-                            object.set_return(null);
-                            reader.next();
+                        if (!"true".equals(nillableValue) &&
+                                !"1".equals(nillableValue)) {
+                            java.lang.String content = reader.getElementText();
 
-                            reader.next();
+                            object.set_return(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(
+                                    content));
                         } else {
-                            object.set_return(User.Factory.parse(reader));
-
-                            reader.next();
+                            reader.getElementText(); // throw away text nodes if any.
                         }
+
+                        reader.next();
                     } // End of if for expected property start element
 
                     else {
@@ -1454,23 +879,9 @@ public class Client_managerStub extends org.apache.axis2.client.Stub {
         } //end of factory class
     }
 
-    public static class ExtensionMapper {
-        public static java.lang.Object getTypeObject(
-            java.lang.String namespaceURI, java.lang.String typeName,
-            javax.xml.stream.XMLStreamReader reader) throws java.lang.Exception {
-            if ("http://entities.ws.wmd/xsd".equals(namespaceURI) &&
-                    "User".equals(typeName)) {
-                return User.Factory.parse(reader);
-            }
-
-            throw new org.apache.axis2.databinding.ADBException(
-                "Unsupported type " + namespaceURI + " " + typeName);
-        }
-    }
-
-    public static class CheckUser implements org.apache.axis2.databinding.ADBBean {
+    public static class Hello implements org.apache.axis2.databinding.ADBBean {
         public static final javax.xml.namespace.QName MY_QNAME = new javax.xml.namespace.QName("http://ws.wmd",
-                "CheckUser", "ns2");
+                "Hello", "ns1");
 
         /**
          * field for Login
@@ -1482,17 +893,6 @@ public class Client_managerStub extends org.apache.axis2.client.Stub {
          *   in the serialized XML
          */
         protected boolean localLoginTracker = false;
-
-        /**
-         * field for Pswd
-         */
-        protected java.lang.String localPswd;
-
-        /*  This tracker boolean wil be used to detect whether the user called the set method
-         *   for this attribute. It will be used to determine whether to include this field
-         *   in the serialized XML
-         */
-        protected boolean localPswdTracker = false;
 
         public boolean isLoginSpecified() {
             return localLoginTracker;
@@ -1516,28 +916,6 @@ public class Client_managerStub extends org.apache.axis2.client.Stub {
             this.localLogin = param;
         }
 
-        public boolean isPswdSpecified() {
-            return localPswdTracker;
-        }
-
-        /**
-         * Auto generated getter method
-         * @return java.lang.String
-         */
-        public java.lang.String getPswd() {
-            return localPswd;
-        }
-
-        /**
-         * Auto generated setter method
-         * @param param Pswd
-         */
-        public void setPswd(java.lang.String param) {
-            localPswdTracker = true;
-
-            this.localPswd = param;
-        }
-
         /**
          *
          * @param parentQName
@@ -1579,11 +957,11 @@ public class Client_managerStub extends org.apache.axis2.client.Stub {
                         (namespacePrefix.trim().length() > 0)) {
                     writeAttribute("xsi",
                         "http://www.w3.org/2001/XMLSchema-instance", "type",
-                        namespacePrefix + ":CheckUser", xmlWriter);
+                        namespacePrefix + ":Hello", xmlWriter);
                 } else {
                     writeAttribute("xsi",
                         "http://www.w3.org/2001/XMLSchema-instance", "type",
-                        "CheckUser", xmlWriter);
+                        "Hello", xmlWriter);
                 }
             }
 
@@ -1603,29 +981,13 @@ public class Client_managerStub extends org.apache.axis2.client.Stub {
                 xmlWriter.writeEndElement();
             }
 
-            if (localPswdTracker) {
-                namespace = "http://ws.wmd";
-                writeStartElement(null, namespace, "pswd", xmlWriter);
-
-                if (localPswd == null) {
-                    // write the nil attribute
-                    writeAttribute("xsi",
-                        "http://www.w3.org/2001/XMLSchema-instance", "nil",
-                        "1", xmlWriter);
-                } else {
-                    xmlWriter.writeCharacters(localPswd);
-                }
-
-                xmlWriter.writeEndElement();
-            }
-
             xmlWriter.writeEndElement();
         }
 
         private static java.lang.String generatePrefix(
             java.lang.String namespace) {
             if (namespace.equals("http://ws.wmd")) {
-                return "ns2";
+                return "ns1";
             }
 
             return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
@@ -1841,10 +1203,9 @@ public class Client_managerStub extends org.apache.axis2.client.Stub {
              * Postcondition: If this object is an element, the reader is positioned at its end element
              *                If this object is a complex type, the reader is positioned at the end element of its outer element
              */
-            public static CheckUser parse(
-                javax.xml.stream.XMLStreamReader reader)
+            public static Hello parse(javax.xml.stream.XMLStreamReader reader)
                 throws java.lang.Exception {
-                CheckUser object = new CheckUser();
+                Hello object = new Hello();
 
                 int event;
                 javax.xml.namespace.QName currentQName = null;
@@ -1877,12 +1238,12 @@ public class Client_managerStub extends org.apache.axis2.client.Stub {
                             java.lang.String type = fullTypeName.substring(fullTypeName.indexOf(
                                         ":") + 1);
 
-                            if (!"CheckUser".equals(type)) {
+                            if (!"Hello".equals(type)) {
                                 //find namespace for the prefix
                                 java.lang.String nsUri = reader.getNamespaceContext()
                                                                .getNamespaceURI(nsPrefix);
 
-                                return (CheckUser) ExtensionMapper.getTypeObject(nsUri,
+                                return (Hello) ExtensionMapper.getTypeObject(nsUri,
                                     type, reader);
                             }
                         }
@@ -1910,33 +1271,6 @@ public class Client_managerStub extends org.apache.axis2.client.Stub {
                             java.lang.String content = reader.getElementText();
 
                             object.setLogin(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(
-                                    content));
-                        } else {
-                            reader.getElementText(); // throw away text nodes if any.
-                        }
-
-                        reader.next();
-                    } // End of if for expected property start element
-
-                    else {
-                    }
-
-                    while (!reader.isStartElement() && !reader.isEndElement())
-                        reader.next();
-
-                    if ((reader.isStartElement() &&
-                            new javax.xml.namespace.QName("http://ws.wmd",
-                                "pswd").equals(reader.getName())) ||
-                            new javax.xml.namespace.QName("", "pswd").equals(
-                                reader.getName())) {
-                        nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance",
-                                "nil");
-
-                        if (!"true".equals(nillableValue) &&
-                                !"1".equals(nillableValue)) {
-                            java.lang.String content = reader.getElementText();
-
-                            object.setPswd(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(
                                     content));
                         } else {
                             reader.getElementText(); // throw away text nodes if any.

@@ -1,8 +1,9 @@
 package wmd.serviceInvoc;
 
-import generated.Client_managerStub;
-import generated.Client_managerStub.CheckUser;
-import generated.Client_managerStub.CheckUserResponse;
+import wmd.Client_managerStub;
+import wmd.Client_managerStub.Hello;
+import wmd.Client_managerStub.HelloResponse;
+
 
 public class WsConsumer {
 
@@ -10,14 +11,14 @@ public class WsConsumer {
 		
 		Client_managerStub stub = new Client_managerStub("http://localhost:8080/axis2/services/client_manager");
 		
-		CheckUser request = new CheckUser();
-		request.setLogin("achiban");
-		request.setPswd("azerty123");
+		Hello request = new Hello();
+		request.setLogin("ACHIBANE");
 		
-		CheckUserResponse response = stub.checkUser(request);
-		Client_managerStub.User user = response.get_return();
 		
-		System.out.println(user);
+		HelloResponse response = stub.hello(request);
+		String greeting = response.get_return();
+		
+		System.out.println(greeting);
 		
 
 	}
